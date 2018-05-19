@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { SkeletonService } from '../../services/skeleton/skeleton.service';
+import { Skeleton , skeletonData} from '../../models/skeleton';
+
 
 @Component({
   selector: 'app-skeleton',
@@ -7,22 +10,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SkeletonComponent implements OnInit {
   @Input() public part: string;
+  @ViewChild('canvas') canvas: ElementRef;
 
-  constructor() { }
+  constructor(private skeletonSvc : SkeletonService) { }
 
   ngOnInit() {
-  }
-
-  parts: string[] = [];
-
-  displayPart(part: string, position: number){
-    if(position === 1){
-      part = "right "+part;
-    }else if(position === -1){
-      part = "left "+part;
-    }
-    this.parts.push(part);
+   
   }
   
+  parts: string[] = [];
+  items: Skeleton[] = skeletonData;
+
+  event(eventName: string, item: Skeleton){
+    this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, item.color);
+    this.parts.push(item.name);
+  }
 
 }

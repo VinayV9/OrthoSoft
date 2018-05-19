@@ -1,4 +1,15 @@
-.box{
-    display: flex;
-    
+
+
+
+.skeleton{
+     position: absolute;
+     top:9vh;
+     left:0px;
+}
+
+canvas{
+    position: absolute;
+    top:9vh;
+    left:0;
+    background-image: url('../../../assets/images/orthoman.png');
 }
