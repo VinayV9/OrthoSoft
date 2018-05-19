@@ -1,0 +1,28 @@
+.sidenav-container {
+  height:100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.nav-bar{
+  width:100vw;
+  position:fixed;
+  height:9vh;
+  z-index:2;
+}
+
+.tool-bar{
+  height:9vh;
+}
+
+.mat-drawer-content {
+  overflow: auto;
+}
+
+.view-box{
+  margin-top:9vh;
+}
+
