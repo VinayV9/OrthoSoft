@@ -14,16 +14,27 @@ export class SkeletonComponent implements OnInit {
 
   constructor(private skeletonSvc : SkeletonService) { }
 
-  ngOnInit() {
-   
-  }
+  ngOnInit() {}
   
   parts: string[] = [];
   items: Skeleton[] = skeletonData;
 
-  event(eventName: string, item: Skeleton){
-    this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, item.color);
-    this.parts.push(item.name);
+  event(eventName: string, item: Skeleton) {
+    switch (eventName) {
+      case "click":
+        this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, item.color);
+        this.parts.push(item.name);
+        break;
+
+      case "mouseenter":
+        this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, item.color);
+        break;
+
+      case "mouseleave":
+        this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, "rgba(0, 0, 0, 0)");
+        this.skeletonSvc.clearCanvas(item.coords.split(' ').map(Number), this.canvas);
+        break;
+    }
   }
 
 }

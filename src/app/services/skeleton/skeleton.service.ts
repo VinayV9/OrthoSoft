@@ -20,10 +20,11 @@ export class SkeletonService {
     }
     ctx.closePath();
     ctx.fill();
-  
+   // ctx.globalCompositeOperation = 'destination-out';
   }
 
-  clearCanavs(canvas: ElementRef){
+  clearCanvas(coords: number[], canvas: ElementRef){
     let ctx: CanvasRenderingContext2D = canvas.nativeElement.getContext('2d');
+    ctx.clearRect(0, 0, 560, 900);
   }
 }

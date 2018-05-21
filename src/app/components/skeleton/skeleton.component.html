@@ -1,9 +1,17 @@
-<div class="skeleton-box">
-  <map  name="Map" id="Map">
-     <area *ngFor = "let item of items; let i = index" (click) = "event('click', item)" (mouseenter) = "event('mouseenter', item)" (mouseleave) = "event('mouseleave',item)" shape="{{item.shape}}" coords="{{item.coords}}" href="{{item.link}}" alt="{{item.name}}" title="{{item.name}}"/>
-     
-  </map>
-  <canvas #canvas width="560px" height="900px" ></canvas>
-  <img src="../../../assets/images/transparent.png" alt="skeleton" class="skeleton" usemap="#Map">
-  <app-display-parts [parts]='parts'></app-display-parts>
+<div class="container">
+
+  <div class="skeleton-box item">
+    <map name="Map" id="Map">
+      <area *ngFor="let item of items; let i = index" (click)="event('click', item)" (mouseenter)="event('mouseenter', item)" (mouseleave)="event('mouseleave',item)"
+        shape="{{item.shape}}" coords="{{item.coords}}" alt="{{item.name}}" title="{{item.name}}" />
+    </map>
+    <canvas #canvas width="560px" height="900px"></canvas>
+    <img src="../../../assets/images/transparent.png" alt="skeleton" class="skeleton" usemap="#Map">
+    <div class="skeleton-bg"></div>
+  </div>
+
+  <div class="item">
+    <app-display-parts [parts]='parts'></app-display-parts>
+  </div>
+
 </div>

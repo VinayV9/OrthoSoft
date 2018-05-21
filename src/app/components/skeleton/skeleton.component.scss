@@ -1,15 +1,27 @@
 
 
-
+.container{
+    display:flex;
+    flex-grow: row wrap;
+}
 .skeleton{
      position: absolute;
      top:9vh;
      left:0px;
+     z-index:3;
 }
 
 canvas{
-    position: absolute;
-    top:9vh;
-    left:0;
+    position: relative;
     background-image: url('../../../assets/images/orthoman.png');
+    z-index:2;
+}
+.skeleton-bg{
+    position:absolute;
+    width:560px;
+    height:900px;
+    top:9vh;
+    left:0px;
+    background-image: url('../../../assets/images/bg3.png');
+    z-index:1;
 }
