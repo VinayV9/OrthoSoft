@@ -22,8 +22,8 @@ export class SkeletonComponent implements OnInit {
   event(eventName: string, item: Skeleton) {
     switch (eventName) {
       case "click":
-        this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, item.color);
-        this.parts.push(item.name);
+        this.toogle(item.partId-1);
+        this.skeletonSvc.clearCanvas(this.items, this.canvas);
         break;
 
       case "mouseenter":
@@ -31,10 +31,14 @@ export class SkeletonComponent implements OnInit {
         break;
 
       case "mouseleave":
-        this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, "rgba(0, 0, 0, 0)");
-        this.skeletonSvc.clearCanvas(item.coords.split(' ').map(Number), this.canvas);
+        this.skeletonSvc.clearCanvas(this.items, this.canvas);
         break;
     }
+  }
+
+  toogle(index){
+   this.items[index].select = !this.items[index].select;
+   this.items[index].select === true ? this.parts.push(this.items[index].name): this.parts.splice(this.parts.indexOf(this.items[index].name), 1) ;
   }
 
 }

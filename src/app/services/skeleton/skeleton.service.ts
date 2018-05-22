@@ -1,4 +1,5 @@
 import { Injectable, ElementRef } from '@angular/core';
+import { Skeleton } from '../../models/skeleton';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +21,16 @@ export class SkeletonService {
     }
     ctx.closePath();
     ctx.fill();
-   // ctx.globalCompositeOperation = 'destination-out';
   }
 
-  clearCanvas(coords: number[], canvas: ElementRef){
+  clearCanvas(items: Skeleton[], canvas: ElementRef){
     let ctx: CanvasRenderingContext2D = canvas.nativeElement.getContext('2d');
     ctx.clearRect(0, 0, 560, 900);
+    items.filter( (item)=>{
+        if(item.select === true){
+          this.drawCanvas(item.coords.split(' ').map(Number), canvas, item.color);
+        }
+    });
+
   }
 }
