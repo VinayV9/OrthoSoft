@@ -1,0 +1,57 @@
+[
+    {
+        "id": "1234",
+        "partIds": [1,22,13],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "1235",
+        "partIds": [11,2,13],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "1236",
+        "partIds": [1,2,3],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "1237",
+        "partIds": [1,2,13],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "1238",
+        "partIds": [1,12,3],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "1239",
+        "partIds": [11,12,13],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "12310",
+        "partIds": [1,12,3],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "12311",
+        "partIds": [1,24,23],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "12312",
+        "partIds": [11,2,3],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "12313",
+        "partIds": [1,2,13],
+        "medicines": "orthosoft, paracetamol"
+    },
+    {
+        "id": "12314",
+        "partIds": [1,12,3],
+        "medicines": "orthosoft, paracetamol"
+    }
+]
