@@ -1,7 +1,7 @@
 [
     {
         "id": "1234",
-        "partIds": [1,22,13],
+        "partIds": [1,2,3],
         "medicines": "orthosoft, paracetamol"
     },
     {

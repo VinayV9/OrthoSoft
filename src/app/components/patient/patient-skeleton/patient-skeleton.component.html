@@ -1,0 +1,22 @@
+<div class="container">
+        <div class="skeleton-box item">
+                <map name="Map" id="Map">
+                  <area *ngFor="let item of items; let i = index"
+                    shape="{{item.shape}}" coords="{{item.coords}}" alt="{{item.name}}" title="{{item.name}}" />
+                </map>
+                <canvas #canvas width="560px" height="900px"></canvas>
+                <img src="../../../assets/images/transparent.png" alt="skeleton" class="skeleton" usemap="#Map">
+                <div class="skeleton-bg"></div>
+        </div>
+        <div class="item">
+            <h1>ID: {{details.id}}</h1>
+            <h2>Medicines</h2> 
+            <b>{{details.medicines}}</b>
+            <h2>Parts Damaged</h2>
+            <mat-list *ngFor="let item of items" >
+                <div *ngIf="item.select">
+                        <mat-list-item > <b>{{item.name}} </b></mat-list-item>
+                </div>
+            </mat-list> 
+        </div>   
+</div>

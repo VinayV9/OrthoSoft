@@ -11,10 +11,15 @@ const httpOptions = {
 })
 export class PatientService {
   idSearchUrl: string = 'assets/json/ids.json';
-
+  p: string = 'assets/json/checkup.json';
   constructor(private http: HttpClient) { }
   
   getAllIds(){
     return this.http.get<any[]>(this.idSearchUrl, httpOptions);
   }
+
+  getDetails(id: string){
+     return this.http.get<any>(this.p, httpOptions);
+  }
+  
 }
