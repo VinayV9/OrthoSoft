@@ -1,4 +1,16 @@
 <mat-list *ngFor="let part of parts">
     <mat-list-item> {{part}} </mat-list-item>
 </mat-list>  
+
+<div class="patient-form">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Patient ID" [(ngModel)]="patient.id" name="id">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Medicines ...." [(ngModel)]="patient.medicines" name="mediciens">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="submit()">Save Record</button>
+      </form>
+</div>
   

@@ -13,6 +13,12 @@ import { DisplayPartsComponent } from './components/display-parts/display-parts.
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { PatientComponent } from './components/patient/patient.component';
+
+
+import { PatientService } from './services/patient/patient.service';
+import { SkeletonService } from './services/skeleton/skeleton.service';
+import { PatientSearchComponent } from './components/patient/patient-search/patient-search.component';
 
 
 @NgModule({
@@ -20,7 +26,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     AppComponent,
     SkeletonComponent,
     DisplayPartsComponent,
-    SideNavComponent
+    SideNavComponent,
+    PatientComponent,
+    PatientSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,10 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatIconModule,
     MatListModule,
   ],
-  providers: [],
+  providers: [
+    PatientService,
+    SkeletonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

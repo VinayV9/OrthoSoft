@@ -16,29 +16,32 @@ export class SkeletonComponent implements OnInit {
 
   ngOnInit() {}
   
-  parts: string[] = [];
-  items: Skeleton[] = skeletonData;
+  protected parts: string[] = [];
+  protected items: Skeleton[] = skeletonData;
+  protected ids: number[] = [];
 
+// events on skeleton
   event(eventName: string, item: Skeleton) {
     switch (eventName) {
       case "click":
         this.toogle(item.partId-1);
         this.skeletonSvc.clearCanvas(this.items, this.canvas);
         break;
-
       case "mouseenter":
         this.skeletonSvc.drawCanvas(item.coords.split(' ').map(Number), this.canvas, item.color);
         break;
-
       case "mouseleave":
         this.skeletonSvc.clearCanvas(this.items, this.canvas);
         break;
     }
   }
-
+  
+// unselect or select a part
   toogle(index){
    this.items[index].select = !this.items[index].select;
-   this.items[index].select === true ? this.parts.push(this.items[index].name): this.parts.splice(this.parts.indexOf(this.items[index].name), 1) ;
+   const part = this.items[index].name;
+   this.items[index].select === true ? this.parts.push(part): this.parts.splice(this.parts.indexOf(part), 1) ;
+   this.items[index].select === true ? this.ids.push(index+1): this.parts.splice(this.ids.indexOf(index+1), 1) ;
   }
 
 }
