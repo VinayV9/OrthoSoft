@@ -1,0 +1,27 @@
+<mat-card class="card">
+  <div class="container">
+      <mat-progress-spinner
+          class="item"
+          [color]="'warn'"
+          [mode]="'determinate'"
+          [value]="value">
+      </mat-progress-spinner>
+      <div class="content">
+          {{currentCount}}/{{totalCount}}
+      </div>
+      <div class="user">
+          <button mat-icon-button class="user-item" (click)="allowPatient(-1)">
+              <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
+          </button>
+          <div>
+            <mat-card >
+                <img src="{{currentUser.avtar}}" alt="user">
+                <h2>{{currentUser.name}}</h2>
+            </mat-card>
+          </div>
+          <button mat-icon-button class="user-item" (click)="allowPatient(1)">
+              <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
+          </button>
+      </div>
+  </div>
+</mat-card>

@@ -16,9 +16,9 @@ export class SkeletonComponent implements OnInit {
 
   ngOnInit() {}
   
-  protected parts: string[] = [];
-  protected items: Skeleton[] = skeletonData;
-  protected ids: number[] = [];
+   parts: string[] = [];
+   items: Skeleton[] = skeletonData;
+   ids: number[] = [];
 
 // events on skeleton
   event(eventName: string, item: Skeleton) {

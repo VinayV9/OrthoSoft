@@ -13,9 +13,9 @@ export class PatientSkeletonComponent implements OnInit {
   @ViewChild('canvas') canvas: ElementRef;
   @Input() id: string;
 
-  protected details: Patient = new Patient();
-  protected items: Skeleton[] = skeletonData;
-  protected parts: any[];
+   details: Patient = new Patient();
+   items: Skeleton[] = skeletonData;
+   parts: any[];
 
   constructor(
     private skeletonSvc: SkeletonService,

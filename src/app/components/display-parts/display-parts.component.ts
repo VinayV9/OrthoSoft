@@ -18,7 +18,7 @@ export class DisplayPartsComponent implements OnInit {
   @Input() public ids: number[] = [];
   
   patient: Patient = new Patient();
-  protected submit(){
+  submit(){
      this.patient.partIds = this.ids; 
     //  TODO: make post req
      console.log(this.patient);
