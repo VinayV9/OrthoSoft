@@ -7,7 +7,7 @@ import { users, User }   from '../../models/user'
 })
 export class WaitListComponent implements OnInit {
   public totalCount: number = users.length;
-  public currentCount: number = 10;
+  public currentCount: number = 1;
   public currentUser: User = users[0];
   public value: number = (this.currentCount/this.totalCount)*100;
   constructor() { }
@@ -20,9 +20,29 @@ export class WaitListComponent implements OnInit {
    * on that day
    */
   allowPatient(index: number){
-     if(this.currentCount > 0){
-        this.currentCount += index;
-        this.currentUser = users[this.currentCount];
-     }
+    switch(index){
+      case -1:
+        if(this.currentCount > 0){
+          this.currentCount -= 1;
+          this.currentUser = users[this.currentCount-1];
+        }
+        break;
+
+      case 1:
+        if(this.currentCount <= this.totalCount){
+          this.currentCount += 1;
+          this.currentUser = users[this.currentCount-1];
+        }
+        break;
+    }
+    this.progressSpinner();
   }
+  /**
+   * calculate percentage of patients
+   * completed
+   */
+  progressSpinner(){
+    this.value= (this.currentCount/this.totalCount)*100;
+  }
+
 }

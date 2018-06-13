@@ -9,7 +9,7 @@ export const  users: User[] =[
     {
         patientId: '1332',
         avtar: '/assets/images/user.png',
-        name: 'vinay',
+        name: 'first',
         place: 'Bhimavaram'
     },
     {
@@ -57,19 +57,19 @@ export const  users: User[] =[
     {
         patientId: '1332',
         avtar: '/assets/images/user.png',
-        name: 'vinay',
+        name: 'ravi',
         place: 'Bhimavaram'
     },
     {
         patientId: '1332',
         avtar: '/assets/images/user.png',
-        name: 'vinay',
+        name: 'Sai',
         place: 'Bhimavaram'
     },
     {
         patientId: '1332',
         avtar: '/assets/images/user.png',
-        name: 'vinay',
+        name: 'last',
         place: 'Bhimavaram'
     }
 ]
