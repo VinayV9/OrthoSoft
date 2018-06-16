@@ -22,14 +22,14 @@ export class WaitListComponent implements OnInit {
   allowPatient(index: number){
     switch(index){
       case -1:
-        if(this.currentCount > 0){
+        if(this.currentCount > 1){
           this.currentCount -= 1;
           this.currentUser = users[this.currentCount-1];
         }
         break;
 
       case 1:
-        if(this.currentCount <= this.totalCount){
+        if(this.currentCount < this.totalCount){
           this.currentCount += 1;
           this.currentUser = users[this.currentCount-1];
         }

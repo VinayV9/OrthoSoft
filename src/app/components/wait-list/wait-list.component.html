@@ -1,5 +1,4 @@
-<mat-card class="card">
-  <div class="container">
+<mat-card class="container">
       <mat-progress-spinner
           class="item"
           [color]="'warn'"
@@ -10,18 +9,28 @@
           {{currentCount}}/{{totalCount}}
       </div>
       <div class="user">
-          <button mat-icon-button class="user-item" (click)="allowPatient(-1)">
-              <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
-          </button>
-          <div>
-            <mat-card >
-                <img src="{{currentUser.avtar}}" alt="user">
-                <h2>{{currentUser.name}}</h2>
-            </mat-card>
+          <div class="btn">
+                <button mat-icon-button class="user-item" (click)="allowPatient(-1)">
+                    <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
+                </button>
           </div>
-          <button mat-icon-button class="user-item" (click)="allowPatient(1)">
-              <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
-          </button>
+          
+          <mat-card class="patient-card">
+                <div class="patient-img">
+                    <img src="{{currentUser.avtar}}" alt="user">
+                </div>
+                <div class="patient-details">
+                    <h4><span>Name:</span> {{currentUser.name}}</h4>
+                    <h4><span>Gender:</span> {{currentUser.gender}}</h4>
+                    <h4><span>Problem:</span> {{currentUser.problem}} </h4>
+                    <h4> <span>Place:</span> {{currentUser.place}} </h4>
+                </div>
+          </mat-card>
+          <div class="btn">
+                <button mat-icon-button class="user-item" (click)="allowPatient(1)">
+                    <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
+                </button>
+          </div>
+          
       </div>
-  </div>
 </mat-card>
