@@ -9,12 +9,25 @@ export class User{
     age: number = 22;
 }
 
-export class visit{
+export class Visit{
     adahar: string = '';
     problem: string = '';
 }
 
-export const  users: User[] =[
+export class WaitList{
+    patientId: string = '1234';
+    avtar: string = '/assets/images/user.png';
+    name: string = '';
+    place: string ='';
+    gender: string = '';
+    adahar: string = '';
+    number: number = 1234455551;
+    age: number = 22;
+    problem: string ='';
+    done: boolean = false;
+}
+
+export const  waitList: WaitList[] =[
     {
         patientId: '1332',
         avtar: '/assets/images/user.png',
@@ -23,7 +36,9 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
-        problem: "severe pain at knee joint"
+        adahar: '12345678',
+        done: false,
+        problem: "severe pain at knee joint",
     },
     {
         patientId: '1332',
@@ -33,6 +48,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "Fracture hand"
     },
     {
@@ -43,6 +60,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -53,6 +72,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -63,6 +84,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -73,6 +96,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -83,6 +108,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -93,6 +120,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -103,6 +132,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -113,6 +144,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     },
     {
@@ -123,6 +156,8 @@ export const  users: User[] =[
         gender: 'male',
         age: 22,
         number: 1234567894,
+        adahar: '12345678',
+        done: false,
         problem: "sever pain at knee joint"
     }
 ]
