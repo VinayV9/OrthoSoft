@@ -4,9 +4,14 @@ export class User{
     name: string = '';
     place: string ='';
     gender: string = '';
-    problem: string = '';
+    adahar: string = '';
     number: number = 1234455551;
     age: number = 22;
+}
+
+export class visit{
+    adahar: string = '';
+    problem: string = '';
 }
 
 export const  users: User[] =[

@@ -12,5 +12,11 @@ export class RegisterDeskComponent implements OnInit {
   
   ngOnInit() {
   }
-
+  /**
+   * takes patient details 
+   * saves in db
+   */
+  registerUser(){
+       console.log(this.patient);
+  }
 }

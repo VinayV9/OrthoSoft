@@ -22,6 +22,7 @@ import { PatientSearchComponent } from './components/patient/patient-search/pati
 import { PatientSkeletonComponent } from './components/patient/patient-skeleton/patient-skeleton.component';
 import { WaitListComponent } from './components/wait-list/wait-list.component';
 import { RegisterDeskComponent } from './components/register-desk/register-desk.component';
+import { VistComponent } from './components/vist/vist.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { RegisterDeskComponent } from './components/register-desk/register-desk.
     PatientSearchComponent,
     PatientSkeletonComponent,
     WaitListComponent,
-    RegisterDeskComponent
+    RegisterDeskComponent,
+    VistComponent
   ],
   imports: [
     BrowserModule,
