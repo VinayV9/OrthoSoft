@@ -4,6 +4,7 @@ import { SkeletonComponent } from './components/skeleton/skeleton.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { WaitListComponent } from './components/wait-list/wait-list.component';
 import { RegisterDeskComponent } from './components/register-desk/register-desk.component';
+import { VistComponent } from './components/vist/vist.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'register-desk',
     component: RegisterDeskComponent
+  },
+  {
+    path: 'visit',
+    component: VistComponent
   }
 ];
 
