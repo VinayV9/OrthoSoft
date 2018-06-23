@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { users, User }   from '../../models/user'
+import { waitList, User }   from '../../models/user'
 @Component({
   selector: 'app-wait-list',
   templateUrl: './wait-list.component.html',
   styleUrls: ['./wait-list.component.scss']
 })
 export class WaitListComponent implements OnInit {
-  public totalCount: number = users.length;
+  public totalCount: number = waitList.length;
   public currentCount: number = 1;
-  public currentUser: User = users[0];
+  public currentUser: User = waitList[0];
   public value: number = (this.currentCount/this.totalCount)*100;
   constructor() { }
 
@@ -24,14 +24,14 @@ export class WaitListComponent implements OnInit {
       case -1:
         if(this.currentCount > 1){
           this.currentCount -= 1;
-          this.currentUser = users[this.currentCount-1];
+          this.currentUser = waitList[this.currentCount-1];
         }
         break;
 
       case 1:
         if(this.currentCount < this.totalCount){
           this.currentCount += 1;
-          this.currentUser = users[this.currentCount-1];
+          this.currentUser = waitList[this.currentCount-1];
         }
         break;
     }
