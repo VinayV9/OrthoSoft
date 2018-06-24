@@ -5,7 +5,7 @@ const userSvc = {}
 
 module.exports = userSvc
 
-userSvc.register = (req, res) => {
+userSvc.registerUser = (req, res) => {
     let user = req.body
     user = new User(user)
     user.save((err, post) => {

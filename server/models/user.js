@@ -21,12 +21,12 @@ const user = mongoDB.Schema({
         select: false
     },
     adahar : {
-        type: string,
+        type: String,
         required: [true, "adahar is required"],
         select: false
     },
     number : {
-        type: number,
+        type: Number,
         required: [true, "number is required"],
         select: false
     },

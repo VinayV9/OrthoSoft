@@ -24,7 +24,7 @@ export class VistComponent implements OnInit {
   registerVisit(){
      this.registerSvc.visit(this.visit)
      .subscribe(
-        data => this.router.navigate(['/wait-list']),
+        data => this.router.navigate(['/']),
         error => console.log('err: ',error)
       );
   }

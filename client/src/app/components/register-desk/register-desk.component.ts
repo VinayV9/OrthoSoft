@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterDeskComponent implements OnInit {
   public patient :User = new User();
+
   constructor(
     private registerSvc: RegisterService,
     private router: Router
@@ -24,7 +25,7 @@ export class RegisterDeskComponent implements OnInit {
   registerUser(){
       this.registerSvc.user(this.patient)
       .subscribe(
-        data => this.router.navigate(['vist']),
+        data => this.router.navigate(['/vist']),
         err => console.log(err)
       );
   }

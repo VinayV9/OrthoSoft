@@ -10,10 +10,10 @@ app.use(bodyParser.json())
 
 
 // server client files
-app.use(express.static(__dirname + "/../dist"))
+app.use(express.static(__dirname + "/../client/dist"))
 
 app.get('/', (req, res) => {
-   res.sendFile('/../dist/index.html')
+   res.sendFile('/../client/dist/index.html')
 })
 
 //routes
