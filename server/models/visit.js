@@ -13,18 +13,14 @@ const visit = mongoDB.Schema({
         type: String,
         required: [true, "problem is required"]
     },
+    done : {
+        type: Boolean,
+        required: [true, "problem is required"]
+    },
     date:{
         type: Date,
-        required: [true, "date is required"],
-        default: Date.now
+        required: [true, "date is required"]
     }
 })
-
-// function autoPopulate(next){
-//       this.populate('adahar')
-//       next()
-// }
-
-//visit.pre('find',autoPopulate);
 
 module.exports = mongoDB.model('Visit', visit)

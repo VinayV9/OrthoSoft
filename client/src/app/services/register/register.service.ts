@@ -19,4 +19,8 @@ export class RegisterService {
   visit(data : any){
     return this.http.post<any>('/patients/visit', data, httpOptions);
   }
+  //get list of patients waiting list on current date
+  getWaitList(){
+    return this.http.get<any>('/assets/json/list.json', httpOptions);
+  }
 }

@@ -15,14 +15,14 @@
                 </button>
           </div>
           
-          <mat-card class="patient-card">
+          <mat-card class="patient-card" *ngIf="currentUser">
                 <div class="patient-img">
                     <img src="{{currentUser.avtar}}" alt="user">
                 </div>
                 <div class="patient-details">
                     <h4><span>Name:</span> {{currentUser.name}}</h4>
                     <h4><span>Gender:</span> {{currentUser.gender}}</h4>
-                    <!-- <h4><span>Problem:</span> {{currentUser.problem}} </h4> -->
+                    <h4><span>Problem:</span> {{currentUser.visits[0].problem}} </h4>
                     <h4> <span>Place:</span> {{currentUser.place}} </h4>
                 </div>
           </mat-card>

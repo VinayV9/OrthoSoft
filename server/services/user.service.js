@@ -6,8 +6,8 @@ const userSvc = {}
 module.exports = userSvc
 
 userSvc.registerUser = (req, res) => {
-    let user = req.body
-    user = new User(user)
+    console.log(req.body)
+    const user = new User(req.body)
     user.save((err, post) => {
         if(err){
             throw err
@@ -67,7 +67,7 @@ userSvc.getWaitList = (req, res) => {
         if(err){
             throw err
         }else{
-            res.status(200).send({error : false, data : list})
+            res.status(200).send(list)
         }
     })
     

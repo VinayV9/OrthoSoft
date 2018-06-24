@@ -25,7 +25,7 @@ export class RegisterDeskComponent implements OnInit {
   registerUser(){
       this.registerSvc.user(this.patient)
       .subscribe(
-        data => this.router.navigate(['/vist']),
+        data => this.router.navigate(['/visit']),
         err => console.log(err)
       );
   }
