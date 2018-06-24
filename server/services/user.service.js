@@ -18,13 +18,13 @@ userSvc.registerUser = (req, res) => {
 }
 
 userSvc.getUsers = (req, res) => {
-    User.find((err, posts) => {
+    User.find((err, users) => {
         if(err){
             throw err
         }else{
             res.status(200).send({
                     error : false, 
-                    data : posts
+                    data : users
                 })
         }
     })
@@ -42,17 +42,33 @@ userSvc.registerVisit = (req, res) => {
 }
 
 userSvc.getWaitList = (req, res) => {
-    const start = new Date()
-    const end = new Date()
-
-    start.setHours(0,0,0,0)
-    end.setHours(23,59,59,999)
-
-    Visit.find({created_on: {$gte: start, $lt: end}}, (err, list) => {
+    
+    User.aggregate(
+        [{
+            $lookup: {
+                from: "visits",
+                localField: "adahar",
+                foreignField: "adahar",
+                as: "visits"
+            },
+        }, 
+        {
+            $match : {
+                "visits" : { $elemMatch : {
+                                "date":{ 
+                                    $lt: new Date(), 
+                                    $gte: new Date(new Date().setDate(new Date().getDate()-1))
+                                }
+                           }
+                }
+            }
+        }])
+    .exec((err, list) => {
         if(err){
             throw err
         }else{
             res.status(200).send({error : false, data : list})
         }
     })
+    
 }

@@ -3,7 +3,6 @@ const mongoDB = require('mongoose')
 const visit = mongoDB.Schema({
     adahar : {
         type: String,
-        ref: 'User',
         required: [true, "adahar is required"]
     },
     new : {
@@ -21,11 +20,11 @@ const visit = mongoDB.Schema({
     }
 })
 
-function autoPopulate(next){
-      this.populate('adahar')
-      next()
-}
+// function autoPopulate(next){
+//       this.populate('adahar')
+//       next()
+// }
 
-visit.pre('find',autoPopulate);
+//visit.pre('find',autoPopulate);
 
 module.exports = mongoDB.model('Visit', visit)

@@ -22,6 +22,7 @@ const user = mongoDB.Schema({
     },
     adahar : {
         type: String,
+        unique: true,
         required: [true, "adahar is required"],
         select: false
     },
