@@ -1,18 +1,16 @@
 .demo-tab-content{
-    min-height:80vh;
-    height:100%;
-}
-.demo-tab-group {
-    border: 1px solid #e8e8e8;
-  }
-  
-.demo-tab-content {
+    height:auto;
     padding: 16px;
 }
-
+.demo-tab-group {
+    border: 1px solid whitesmoke;
+}
 mat-tab{
     width:100%;
-    height:100%;
-    overflow-y: scroll;
-    overflow: hidden;
+    min-height: 80vh;
+    height:auto;
+    
+}
+mat-icon{
+    color: blue;
 }

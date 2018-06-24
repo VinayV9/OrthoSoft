@@ -1,68 +1,59 @@
-<mat-card>
+<!-- <mat-card>
      <app-patient-search (idSelected)="getId($event)"></app-patient-search>
-</mat-card>     
-<div>
-  <mat-card>
-    <mat-card-content>
-      <h2 class="example-h2">Patient Panel</h2>
-      <mat-tab-group class="demo-tab-group">
+</mat-card>      -->
 
-        <mat-tab label="Tab 1">
-          <ng-template mat-tab-label>
-            <mat-icon>accessibility</mat-icon>
-          </ng-template>
-          <div class="demo-tab-content">
-            <app-patient-skeleton [id]='patientId'></app-patient-skeleton>
-          </div>
-        </mat-tab>
+<mat-tab-group class="demo-tab-group">
+    <mat-tab label="Tab 1">
+        <ng-template mat-tab-label>
+          <mat-icon>accessibility</mat-icon>
+        </ng-template>
+        <div class="demo-tab-content">
+          <app-patient-skeleton [id]='patientId'></app-patient-skeleton>
+        </div>
+    </mat-tab>
 
-        <mat-tab label="Tab 2">
-          <ng-template mat-tab-label>
-            <mat-icon>assignment</mat-icon>
-          </ng-template>
-          <div class="demo-tab-content">
-              Comming Soon
-          </div>  
-        </mat-tab>
+    <mat-tab label="Tab 2">
+        <ng-template mat-tab-label>
+          <mat-icon>assignment</mat-icon>
+        </ng-template>
+        <div class="demo-tab-content">
+            Comming Soon
+        </div>  
+    </mat-tab>
 
-        <mat-tab label="Tab 3" >
-          <ng-template mat-tab-label>
-            <mat-icon>person</mat-icon>
-          </ng-template>
-          <div class="demo-tab-content">
-              Comming Soon
-          </div> 
-        </mat-tab>
+    <mat-tab label="Tab 3" >
+        <ng-template mat-tab-label>
+          <mat-icon>person</mat-icon>
+        </ng-template>
+        <div class="demo-tab-content">
+            Comming Soon
+        </div> 
+    </mat-tab>
 
-        <mat-tab label="Tab 4">
-          <ng-template mat-tab-label>
-            <mat-icon>where_to_vote</mat-icon>
-          </ng-template>
-          <div class="demo-tab-content">
-              Comming Soon
-          </div>  
-        </mat-tab>
+    <mat-tab label="Tab 4">
+        <ng-template mat-tab-label>
+          <mat-icon>where_to_vote</mat-icon>
+        </ng-template>
+        <div class="demo-tab-content">
+            Comming Soon
+        </div>  
+    </mat-tab>
 
-        <mat-tab label="Tab 5">
-          <ng-template mat-tab-label>
-            <mat-icon>healing</mat-icon>
-          </ng-template>
-          <div class="demo-tab-content">
-              comming Soon 
-          </div>  
-        </mat-tab>
+    <mat-tab label="Tab 5">
+      <ng-template mat-tab-label>
+        <mat-icon>healing</mat-icon>
+      </ng-template>
+      <div class="demo-tab-content">
+          comming Soon 
+      </div>  
+    </mat-tab>
 
-        <mat-tab label="Tab 6">
-          <ng-template mat-tab-label>
-            <mat-icon>fitness_center</mat-icon>
-          </ng-template>
-          <div class="demo-tab-content">
-              Comming Soon
-          </div>  
-            
-        </mat-tab>
-
-      </mat-tab-group>
-    </mat-card-content>
-  </mat-card>
-</div>
+    <mat-tab label="Tab 6">
+        <ng-template mat-tab-label>
+          <mat-icon>fitness_center</mat-icon>
+        </ng-template>
+        <div class="demo-tab-content">
+            Comming Soon
+        </div>  
+    </mat-tab>
+</mat-tab-group>
