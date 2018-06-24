@@ -1,15 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const authSvc = require('../services/auth.service')
 const userSvc = require('../services/user.service')
 const tokenCheck = require('../middlewares/tokenCheck')
 
-router.post('/register', authSvc.register)
+router.post('/register', userSvc.register)
+router.post('/visit', userSvc.visit)
 
-router.post('/login', authSvc.login)
-
-router.post('/post', tokenCheck, userSvc.insertPost)
-
-router.post('/posts', userSvc.getPosts)
+router.get('/', userSvc.getUsers)
+router.get('/wait-list', userSvc.getWaitList)
 
 module.exports = router

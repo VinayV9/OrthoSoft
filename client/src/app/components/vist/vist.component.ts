@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Visit } from '../../models/user';
+import { RegisterService } from '../../services/register/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vist',
@@ -8,7 +10,10 @@ import { Visit } from '../../models/user';
 })
 export class VistComponent implements OnInit {
   public visit: Visit = new Visit();
-  constructor() { }
+  constructor(
+    private registerSvc: RegisterService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -17,7 +22,11 @@ export class VistComponent implements OnInit {
    * register desk takes the problem description
    */
   registerVisit(){
-     console.log(this.visit);
+     this.registerSvc.visit(this.visit)
+     .subscribe(
+        data => this.router.navigate(['/wait-list']),
+        error => console.log('err: ',error)
+      );
   }
 
 }

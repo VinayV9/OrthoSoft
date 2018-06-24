@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
+import { RegisterService } from '../../services/register/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-desk',
@@ -8,7 +10,10 @@ import { User } from '../../models/user';
 })
 export class RegisterDeskComponent implements OnInit {
   public patient :User = new User();
-  constructor() { }
+  constructor(
+    private registerSvc: RegisterService,
+    private router: Router
+  ) { }
   
   ngOnInit() {
   }
@@ -17,6 +22,10 @@ export class RegisterDeskComponent implements OnInit {
    * saves in db
    */
   registerUser(){
-       console.log(this.patient);
+      this.registerSvc.user(this.patient)
+      .subscribe(
+        data => this.router.navigate(['vist']),
+        err => console.log(err)
+      );
   }
 }

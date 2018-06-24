@@ -1,5 +1,4 @@
 export class User{
-    patientId: string = '1234';
     avtar: string = '/assets/images/user.png';
     name: string = '';
     place: string ='';
@@ -11,11 +10,11 @@ export class User{
 
 export class Visit{
     adahar: string = '';
+    new: boolean = false;
     problem: string = '';
 }
 
 export class WaitList{
-    patientId: string = '1234';
     avtar: string = '/assets/images/user.png';
     name: string = '';
     place: string ='';
@@ -29,7 +28,6 @@ export class WaitList{
 
 export const  waitList: WaitList[] =[
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'Dhruva',
         place: 'Bhimavaram',
@@ -41,7 +39,6 @@ export const  waitList: WaitList[] =[
         problem: "severe pain at knee joint",
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'Ravi',
         place: 'Tanuku',
@@ -53,7 +50,6 @@ export const  waitList: WaitList[] =[
         problem: "Fracture hand"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'kiran',
         place: 'Bhimavaram',
@@ -65,7 +61,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'Rama Krishna',
         place: 'Bhimavaram',
@@ -77,7 +72,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'Hacker',
         place: 'Bhimavaram',
@@ -89,7 +83,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'Sehwag',
         place: 'Bhimavaram',
@@ -101,7 +94,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'George',
         place: 'Vijayawada',
@@ -113,7 +105,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'vinay',
         place: 'Tadepalligudam',
@@ -125,7 +116,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'ravi',
         place: 'Bhimavaram',
@@ -137,7 +127,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'Sai',
         place: 'Bhimavaram',
@@ -149,7 +138,6 @@ export const  waitList: WaitList[] =[
         problem: "sever pain at knee joint"
     },
     {
-        patientId: '1332',
         avtar: '/assets/images/user.png',
         name: 'Siva',
         place: 'Bhimavaram',

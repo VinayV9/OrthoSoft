@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
 })
 
 //routes
-app.use('/auth', require('./controllers/users.controller'))
+app.use('/auth', require('./controllers/auth.controller'))
+app.use('/patients', require('./controllers/users.controller'))
 
 app.get('*', (req, res) => {
   res.redirect('back')

@@ -1,17 +1,14 @@
-const jwt = require('jsonwebtoken')
-const Post = require('../models/post')
 const User = require('../models/user')
+const Visit = require('../models/visit')
 const config = require('../config/config')
 const userSvc = {}
 
 module.exports = userSvc
 
-
-userSvc.insertPost = function(req, res){
-    let post = req.body
-    post.userId = req.userId
-    post = new Post(post)
-    post.save(function(err, post){
+userSvc.register = (req, res) => {
+    let user = req.body
+    user = new User(user)
+    user.save((err, post) => {
         if(err){
             throw err
         }else{
@@ -20,40 +17,42 @@ userSvc.insertPost = function(req, res){
     }) 
 }
 
-userSvc.updatePost = function(req, res){
-    post = req.body
-    res.status(200).send({error:false})
-}
-
-userSvc.deletePost = function(req, res){
-    post = req.body
-    res.status(200).send({error:false})
-}
-
-userSvc.getPosts = function(req, res){
-    Post.find((err, posts)=>{
+userSvc.getUsers = (req, res) => {
+    User.find((err, posts) => {
         if(err){
             throw err
         }else{
-            res.status(200).send(posts)
+            res.status(200).send({
+                    error : false, 
+                    data : posts
+                })
         }
     })
 }
 
-/*
+userSvc.registerVisit = (req, res) => {
+    const visit = new Visit(req.body)
+    visit.save((err, data) => {
+         if(err){
+             throw err
+         }else{
+             res.status(200).send({error : false})
+         }
+    })
+}
 
-User.aggregate([
-    { $lookup:
-       {
-         from: Post,
-         localField: '_Id',
-         foreignField: 'userId',
-       }
-     }
-    ]).toArray(function(err, res) {
-    if (err) throw err;
-    console.log(JSON.stringify(res));
-    db.close();
-  });
+userSvc.getWaitList = (req, res) => {
+    const start = new Date()
+    const end = new Date()
 
-*/
+    start.setHours(0,0,0,0)
+    end.setHours(23,59,59,999)
+
+    Visit.find({created_on: {$gte: start, $lt: end}}, (err, list) => {
+        if(err){
+            throw err
+        }else{
+            res.status(200).send({error : false, data : list})
+        }
+    })
+}

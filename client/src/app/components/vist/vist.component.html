@@ -3,6 +3,12 @@
       <mat-form-field class="example-full-width">
           <input matInput placeholder="Adahar number" name="adahar" [(ngModel)]="visit.adahar">
       </mat-form-field>
+      <mat-form-field>
+        <mat-select name="new" [(value)]="visit.new" placeholder="New case">
+          <mat-option value="true">True</mat-option>
+          <mat-option value="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
       <mat-form-field class="example-full-width" >
         <textarea matInput placeholder="Problem Description" name="problem" [(ngModel)]="visit.problem"></textarea>
       </mat-form-field>

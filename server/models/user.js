@@ -1,7 +1,7 @@
 const mongoDB = require('mongoose')
 
 const user = mongoDB.Schema({
-    username : {
+    name : {
         type: String,
         required: [true, "username is required"]
     },
@@ -10,15 +10,29 @@ const user = mongoDB.Schema({
         required: [true, "image url required"],
         default: "https://www.w3schools.com/w3images/avatar6.png"
     },
-    email : {
-        type: String,
-        unique: true,
-        trim:true,
-        required: [true, "email is required"]
+    age : {
+        type: Number,
+        required: [true, "age is required"],
+        select: false
     },
-    password : {
+    place : {
         type: String,
-        required: [true, "password is required"],
+        required: [true, "place is required"],
+        select: false
+    },
+    adahar : {
+        type: string,
+        required: [true, "adahar is required"],
+        select: false
+    },
+    number : {
+        type: number,
+        required: [true, "number is required"],
+        select: false
+    },
+    gender : {
+        type: String,
+        required: [true, "gender is required"],
         select: false
     }
 })
