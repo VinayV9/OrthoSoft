@@ -1,4 +1,4 @@
-<mat-card class="container">
+<mat-card class="container" *ngIf="currentUser">
       <mat-progress-spinner
           class="item"
           [color]="'warn'"
@@ -8,14 +8,14 @@
       <div class="content">
           {{currentCount}}/{{totalCount}}
       </div>
-      <div class="user">
+      <div class="user" >
           <div class="btn">
                 <button mat-icon-button class="user-item" (click)="allowPatient(-1)">
                     <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
                 </button>
           </div>
           
-          <mat-card class="patient-card" *ngIf="currentUser">
+          <mat-card class="patient-card" >
                 <div class="patient-img">
                     <img src="{{currentUser.avtar}}" alt="user">
                     <i class="material-icons done" *ngIf="currentUser.visits[0].done">check_circle</i>

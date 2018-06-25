@@ -6,13 +6,15 @@
 }
 .skeleton{
      position: absolute;
-     top:9vh;
+     top:0vh;
      left:0px;
      z-index:3;
 }
 
 canvas{
     position: relative;
+    top:0vh;
+    left:0px;
     background-image: url('../../../assets/images/orthoman.png');
     z-index:2;
 }
@@ -20,8 +22,8 @@ canvas{
     position:absolute;
     width:560px;
     height:900px;
-    top:9vh;
+    top:0vh;
     left:0px;
-    background-image: url('../../../assets/images/bg3.png');
+    // background-image: url('../../../assets/images/bg3.png');
     z-index:1;
 }

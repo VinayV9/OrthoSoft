@@ -1,14 +1,24 @@
 <!-- <mat-card>
      <app-patient-search (idSelected)="getId($event)"></app-patient-search>
 </mat-card>      -->
-
 <mat-tab-group class="demo-tab-group">
+    <mat-tab label="Tab 3" >
+        <ng-template mat-tab-label>
+            <mat-icon>person</mat-icon>
+            <b>Details</b>
+        </ng-template>
+        <div class="demo-tab-content">
+            Comming Soon {{id}}
+        </div> 
+    </mat-tab>
+
     <mat-tab label="Tab 1">
         <ng-template mat-tab-label>
           <mat-icon>accessibility</mat-icon>
+          <b>AO Fracture</b>
         </ng-template>
         <div class="demo-tab-content">
-          <app-patient-skeleton [id]='patientId'></app-patient-skeleton>
+          <app-skeleton ></app-skeleton>
         </div>
     </mat-tab>
 
@@ -19,15 +29,6 @@
         <div class="demo-tab-content">
             Comming Soon
         </div>  
-    </mat-tab>
-
-    <mat-tab label="Tab 3" >
-        <ng-template mat-tab-label>
-          <mat-icon>person</mat-icon>
-        </ng-template>
-        <div class="demo-tab-content">
-            Comming Soon
-        </div> 
     </mat-tab>
 
     <mat-tab label="Tab 4">

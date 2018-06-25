@@ -1,16 +1,18 @@
 .demo-tab-content{
     height:auto;
-    padding: 16px;
 }
 .demo-tab-group {
+    width:80vw;
     border: 1px solid whitesmoke;
 }
 mat-tab{
     width:100%;
-    min-height: 80vh;
+    min-height: 95vh;
     height:auto;
-    
 }
 mat-icon{
     color: blue;
+}
+.example-tab-icon {
+    margin-right: 8px;
 }

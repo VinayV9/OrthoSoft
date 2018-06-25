@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User}   from '../../models/user'
 import { RegisterService } from '../../services/register/register.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-wait-list',
   templateUrl: './wait-list.component.html',
@@ -12,13 +13,18 @@ export class WaitListComponent implements OnInit {
   public currentCount: number;
   public currentUser: any;
   public value: number;
-  constructor(private registerSvc: RegisterService) { }
+  public waitList: any[] = [];
+
+  constructor(
+    private registerSvc: RegisterService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
       this.getList();
       this.initialize();
   }
-  public waitList: any[] = [];
+  
   /**
    * takes -1 or 1 as parameter
    * get next or prev patient details
@@ -51,9 +57,10 @@ export class WaitListComponent implements OnInit {
   }
 
   initialize(){
-    this.currentCount= 0;
+    this.currentCount= 1;
     this.value= this.progressSpinner();
   }
+
   getList(){
     this.registerSvc.getWaitList()
     .subscribe(
@@ -65,6 +72,9 @@ export class WaitListComponent implements OnInit {
       err => {
         console.log(err);
       });
-      console.log( this.waitList);
+  }
+
+  viewPatient(){
+     this.router.navigate(['/patients', this.currentUser.adahar]);
   }
 }

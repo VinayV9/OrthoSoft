@@ -19,10 +19,10 @@ import { PatientComponent } from './components/patient/patient.component';
 import { PatientService } from './services/patient/patient.service';
 import { SkeletonService } from './services/skeleton/skeleton.service';
 import { PatientSearchComponent } from './components/patient/patient-search/patient-search.component';
-import { PatientSkeletonComponent } from './components/patient/patient-skeleton/patient-skeleton.component';
 import { WaitListComponent } from './components/wait-list/wait-list.component';
 import { RegisterDeskComponent } from './components/register-desk/register-desk.component';
 import { VistComponent } from './components/vist/vist.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 @NgModule({
@@ -33,10 +33,10 @@ import { VistComponent } from './components/vist/vist.component';
     SideNavComponent,
     PatientComponent,
     PatientSearchComponent,
-    PatientSkeletonComponent,
     WaitListComponent,
     RegisterDeskComponent,
-    VistComponent
+    VistComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

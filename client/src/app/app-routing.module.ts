@@ -20,6 +20,10 @@ const routes: Routes = [
     component: PatientComponent
   },
   {
+    path: 'patients/:id',
+    component: PatientComponent
+  },
+  {
     path: 'register-desk',
     component: RegisterDeskComponent
   },
