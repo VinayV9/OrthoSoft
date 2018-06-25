@@ -1,8 +1,9 @@
 .demo-tab-content{
+    min-height: 100%;
     height:auto;
 }
 .demo-tab-group {
-    width:80vw;
+    width:100%;
     border: 1px solid whitesmoke;
 }
 mat-tab{

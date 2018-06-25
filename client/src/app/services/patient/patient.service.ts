@@ -21,7 +21,9 @@ export class PatientService {
   }
 
   getDetailsById(id: string){
-     return this.http.get<any>('', httpOptions);
+     let url = `/patient:${id}`;
+     url = '/assets/json/list.json';
+     return this.http.get<any>(url, httpOptions);
   }
   
 }
