@@ -16,6 +16,19 @@
         <i class="material-icons Side nav toggle icon">menu</i>
       </button>
       <span>Orthosoft</span>
+      <span class="example-spacer"></span>
+      <!-- <div *ngIf="!this.authSvc.loggedIn()">
+        <button mat-button (click)="navigate('login')"> Login</button>
+      </div>
+    
+      <div *ngIf="this.authSvc.loggedIn()">
+        <span>{{user.username}}</span>
+        <img src="{{user.avtar}}" alt="Avatar" class="avatar" [matMenuTriggerFor]="menu">
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>My account</button>
+          <button mat-menu-item (click)="this.authSvc.logout()" *ngIf="this.authSvc.loggedIn()">Logout</button>
+        </mat-menu>
+      </div> -->
     </mat-toolbar>
     <div class="view-box">
       <ng-content></ng-content>
