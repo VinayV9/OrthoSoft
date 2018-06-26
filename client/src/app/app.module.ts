@@ -23,6 +23,7 @@ import { WaitListComponent } from './components/wait-list/wait-list.component';
 import { RegisterDeskComponent } from './components/register-desk/register-desk.component';
 import { VistComponent } from './components/vist/vist.component';
 import { DetailsComponent } from './components/details/details.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DetailsComponent } from './components/details/details.component';
     WaitListComponent,
     RegisterDeskComponent,
     VistComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
