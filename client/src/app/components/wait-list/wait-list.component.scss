@@ -6,8 +6,9 @@
     width: 80%;
     height: 70vh;
     max-width: auto;
-    max-height: auto;
+    height: auto;
     margin: 0 auto;
+    padding: 20px;
 }
 .content{
     position: relative;
@@ -64,5 +65,9 @@ mat-icon{
 }
 img{
     padding: 10px;
+}
+mat-icon-button{
+    display: flex;
+    justify-content: center;
 }
 

@@ -5,11 +5,16 @@ import { PatientComponent } from './components/patient/patient.component';
 import { WaitListComponent } from './components/wait-list/wait-list.component';
 import { RegisterDeskComponent } from './components/register-desk/register-desk.component';
 import { VistComponent } from './components/vist/vist.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: WaitListComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'skeleton',

@@ -12,13 +12,18 @@ import { AuthService } from '../../services/auth/auth.service';
 export class SideNavComponent {
   public user = {}
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
+
   constructor(
-    private breakpointObserver: BreakpointObserver
-    // private router:Router,
-    // public authSvc: AuthService
+    private breakpointObserver: BreakpointObserver,
+    private router:Router,
+    public authSvc: AuthService
   ) {}
   
-  // navigate(path){
-  //   this.router.navigate([path])
-  // }
+  ngOnInit() {
+    this.authSvc.cast.subscribe(user => this.user = user); 
+  }
+
+  navigate(path){
+    this.router.navigate([path])
+  }
 }

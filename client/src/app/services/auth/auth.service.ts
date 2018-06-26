@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -34,4 +35,18 @@ export class AuthService {
   getToken(){
     return localStorage.getItem('token');
   }
+
+  private user = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('user')));
+  cast = this.user.asObservable();
+  
+  getProfile(data){
+    let newUser = {
+      username:data.username,
+      avtar:data.avtar
+    };
+    localStorage.setItem('user', JSON.stringify(newUser))
+    
+    this.user.next(newUser);
+  }
+
 }

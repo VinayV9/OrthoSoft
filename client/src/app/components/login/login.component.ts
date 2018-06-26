@@ -10,7 +10,7 @@ import { Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   user: any = {};
   constructor(
-    private loginSvc: AuthService,
+    private authSvc: AuthService,
     private router: Router
   ) { }
   
@@ -18,11 +18,12 @@ export class LoginComponent implements OnInit {
   }
   hide = true;
   login(){
-    this.loginSvc.login(this.user)
+    this.authSvc.login(this.user)
     .subscribe(
         data => {
           localStorage.setItem('token', data.token);
           this.router.navigate(['/']);
+          this.authSvc.getProfile(data);
         },
         error => {
           //TODO: alert service

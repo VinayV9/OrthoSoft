@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const User = require('../models/user')
+const User = require('../models/client')
 const config = require('../config/config')
 const authSvc = {}
 
@@ -37,7 +37,7 @@ authSvc.register = function(req, res){
 
 authSvc.login = function(req, res){
     let user = req.body
-    User.findOne({email : user.email}).select('+password').exec((err, data) => {
+    User.findOne({email : user.email},(err, data) => {
         if(err){ throw err }
         else{
             if(data){

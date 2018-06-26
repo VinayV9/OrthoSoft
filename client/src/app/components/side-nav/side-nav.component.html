@@ -17,7 +17,7 @@
       </button>
       <span>Orthosoft</span>
       <span class="example-spacer"></span>
-      <!-- <div *ngIf="!this.authSvc.loggedIn()">
+      <div *ngIf="!this.authSvc.loggedIn()">
         <button mat-button (click)="navigate('login')"> Login</button>
       </div>
     
@@ -28,7 +28,7 @@
           <button mat-menu-item>My account</button>
           <button mat-menu-item (click)="this.authSvc.logout()" *ngIf="this.authSvc.loggedIn()">Logout</button>
         </mat-menu>
-      </div> -->
+      </div>
     </mat-toolbar>
     <div class="view-box">
       <ng-content></ng-content>

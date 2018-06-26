@@ -59,6 +59,7 @@ export class WaitListComponent implements OnInit {
   initialize(){
     this.currentCount= 1;
     this.value= this.progressSpinner();
+    this.value = this.progressSpinner();
   }
 
   getList(){

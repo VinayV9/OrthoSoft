@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialdesignModule } from './modules/material-design/material-design.module';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -24,6 +24,8 @@ import { RegisterDeskComponent } from './components/register-desk/register-desk.
 import { VistComponent } from './components/vist/vist.component';
 import { DetailsComponent } from './components/details/details.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth/auth.service';
+import { AuthGuard } from './gaurds/auth.guard';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { LoginComponent } from './components/login/login.component';
   ],
   providers: [
     PatientService,
-    SkeletonService
+    SkeletonService,
+    AuthService,
+    {provide : HTTP_INTERCEPTORS, useClass : AuthGuard, multi:true}
   ],
   bootstrap: [AppComponent]
 })
